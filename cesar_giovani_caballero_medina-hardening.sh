@@ -22,7 +22,7 @@ if [[ $a == *"CentOS"* ]]; then
         echo "Paquetes actualizados"
 
 else
-        var=$(sudo apt -y install clamav | tail -n 1 | cut -d "," -f 2 | awk '{>
+        var=$(sudo apt -y install clamav | tail -n 1 | cut -d "," -f 2 | awk '{print $1}') > /dev/null 2>&1
         if [ $var = 0 ];then
                 echo "Clamav ya se encuentra instalado"
                 echo "Eliminando clamav..."
